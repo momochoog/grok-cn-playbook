@@ -1,0 +1,41 @@
+name: 事实更新
+description: 报告方案、价格、功能或条款已经变化
+title: "[事实更新] "
+labels: ["fact-update"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: 需要更新的主张
+      description: 请写成一个可独立核验的句子。
+    validations:
+      required: true
+  - type: input
+    id: official_source
+    attributes:
+      label: 官方原始来源
+      description: 请提供官方页面直达链接，不要提交搜索结果页。
+    validations:
+      required: true
+  - type: input
+    id: observed_on
+    attributes:
+      label: 核验日期
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 页面直接显示了什么
+      description: 请简述事实、适用地区或渠道，以及页面没有说明的部分。
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私检查
+      options:
+        - label: 我没有提交账号、订单、联系方式、Cookie、Session、Token 或 API Key。
+          required: true
+
