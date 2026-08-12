@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/grok-cn-playbook/schema/prompt.schema.json",
+  "title": "Grok CN Playbook Prompt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "id",
+    "title",
+    "version",
+    "updated",
+    "language",
+    "workflow",
+    "description",
+    "suitable_for",
+    "inputs",
+    "prompt_template",
+    "expected_output",
+    "quality_checks",
+    "safety_notes",
+    "license",
+    "origin"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "../schema/prompt.schema.json"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 4
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "language": {
+      "const": "zh-CN"
+    },
+    "workflow": {
+      "enum": [
+        "research",
+        "trend-analysis",
+        "decision-analysis",
+        "code-review",
+        "data-analysis",
+        "writing",
+        "creative-brief",
+        "meeting-operations"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 12
+    },
+    "suitable_for": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "description", "required", "example"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 4
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "example": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "prompt_template": {
+      "type": "string",
+      "minLength": 240
+    },
+    "expected_output": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 4
+      }
+    },
+    "quality_checks": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 4
+      }
+    },
+    "safety_notes": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 4
+      }
+    },
+    "license": {
+      "const": "Apache-2.0"
+    },
+    "origin": {
+      "const": "Original prompt authored for this repository; not copied or derived from xAI system prompts."
+    }
+  }
+}
+
