@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/grok-cn-playbook/schema/access-snapshot.schema.json",
+  "title": "Grok access snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "as_of",
+    "language",
+    "disclosure",
+    "evidence_observations",
+    "third_party_offer"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "../schema/access-snapshot.schema.json"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "language": {
+      "const": "zh-CN"
+    },
+    "disclosure": {
+      "type": "string",
+      "minLength": 30
+    },
+    "evidence_observations": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "claim", "source", "source_owner", "source_type", "observed_on", "caveat"],
+        "properties": {
+          "id": {"type": "string"},
+          "claim": {"type": "string"},
+          "source": {"type": "string", "format": "uri"},
+          "source_owner": {"type": "string"},
+          "source_type": {
+            "enum": ["official", "official-store-listing", "secondary-launch-report"]
+          },
+          "observed_on": {"type": "string", "format": "date"},
+          "caveat": {"type": "string"}
+        }
+      }
+    },
+    "third_party_offer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "commercial_disclosure",
+        "plan",
+        "duration_months",
+        "price",
+        "manual_capacity",
+        "capacity_meaning",
+        "delivery_options",
+        "payment_methods",
+        "wechat_contact_only",
+        "comparison_context"
+      ],
+      "properties": {
+        "provider": {"const": "AIXiamo"},
+        "commercial_disclosure": {"type": "string"},
+        "plan": {"const": "SuperGrok Heavy"},
+        "duration_months": {"const": 3},
+        "price": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["amount", "currency"],
+          "properties": {
+            "amount": {"const": 580},
+            "currency": {"const": "CNY"}
+          }
+        },
+        "manual_capacity": {"const": 20},
+        "capacity_meaning": {"type": "string"},
+        "delivery_options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "credential_policy", "risk_note"]
+          }
+        },
+        "payment_methods": {
+          "const": ["Alipay", "USDT-BEP20", "USDT-TRC20"]
+        },
+        "wechat_contact_only": {"const": true},
+        "comparison_context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reported_monthly_price_usd",
+            "reported_three_month_price_usd",
+            "illustrative_exchange_rate",
+            "illustrative_three_month_value_cny",
+            "method",
+            "caveat"
+          ],
+          "properties": {
+            "reported_monthly_price_usd": {"const": 300},
+            "reported_three_month_price_usd": {"const": 900},
+            "illustrative_exchange_rate": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["as_of", "usd_to_cny"],
+              "properties": {
+                "as_of": {"const": "2026-08-12"},
+                "usd_to_cny": {"const": 6.76}
+              }
+            },
+            "illustrative_three_month_value_cny": {"const": 6084},
+            "method": {"type": "string"},
+            "caveat": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}
