@@ -1,0 +1,34 @@
+name: 新 Prompt 提案
+description: 提议一个与现有八个工作流不同的原创 Prompt
+title: "[Prompt] "
+labels: ["prompt"]
+body:
+  - type: input
+    id: workflow
+    attributes:
+      label: 工作流名称
+      description: 一句话说明它解决什么不同任务。
+    validations:
+      required: true
+  - type: textarea
+    id: inputs_outputs
+    attributes:
+      label: 输入与可验收输出
+      description: 列出必要变量和能判断完成与否的输出。
+    validations:
+      required: true
+  - type: textarea
+    id: originality
+    attributes:
+      label: 原创说明
+      description: 说明内容如何从零编写，未复制或改写官方 AGPL Prompt。
+    validations:
+      required: true
+  - type: checkboxes
+    id: license
+    attributes:
+      label: 授权
+      options:
+        - label: 我有权以 Apache-2.0 提交该内容。
+          required: true
+
