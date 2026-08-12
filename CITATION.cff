@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "如果本仓库帮助了你的研究或项目，请引用仓库及所用版本。"
+title: "Grok 中文使用与会员决策手册"
+type: software
+authors:
+  - name: "AIXiamo contributors"
+version: 1.0.0
+date-released: 2026-08-12
+license: Apache-2.0
+abstract: "中文优先的 Grok 会员决策手册与可机器校验的原创工作流 Prompt JSON 库。"
+
