@@ -1,0 +1,16 @@
+{
+  "name": "grok-cn-playbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中文优先的 Grok 会员决策手册与原创 Prompt JSON 库",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/validate-prompts.mjs",
+    "validate": "node scripts/validate-prompts.mjs"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
+
