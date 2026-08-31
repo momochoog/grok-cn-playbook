@@ -1,8 +1,8 @@
 {
   "$schema": "../schema/access-snapshot.schema.json",
-  "as_of": "2026-08-12",
+  "as_of": "2026-08-31",
   "language": "zh-CN",
-  "disclosure": "本快照由独立第三方 AIXiamo 维护；AIXiamo 同时提供订阅服务，与 xAI、X Corp.、Apple 无关联、授权或背书关系。",
+  "disclosure": "本快照由 AIXiamo 运营方维护；AIXiamo 是独立于 xAI、X Corp. 与 Apple 的第三方订阅服务方，不代表或获其授权、背书。",
   "evidence_observations": [
     {
       "id": "xai-free-public-price",
@@ -10,17 +10,26 @@
       "source": "https://x.ai/pricing",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-12",
+      "observed_on": "2026-08-31",
       "caveat": "功能和限制可能变化，以当前页面与账号内显示为准。"
     },
     {
       "id": "xai-supergrok-public-price",
-      "claim": "xAI 定价页显示 SuperGrok 为 30 美元/月，并描述为提供更高使用上限。",
+      "claim": "xAI 定价页显示 SuperGrok 为 30 美元/月。",
       "source": "https://x.ai/pricing",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-12",
+      "observed_on": "2026-08-31",
       "caveat": "更高上限不等于无限；地区、税费和结算条件以账号结算页为准。"
+    },
+    {
+      "id": "xai-supergrok-plus-public-price",
+      "claim": "xAI 定价页显示 SuperGrok Plus 为 100 美元/月。",
+      "source": "https://x.ai/pricing",
+      "source_owner": "xAI",
+      "source_type": "official",
+      "observed_on": "2026-08-31",
+      "caveat": "公开价格不代表所有地区、税费与账号的最终结算金额。"
     },
     {
       "id": "app-store-heavy-iap-listing",
@@ -28,8 +37,8 @@
       "source": "https://apps.apple.com/us/app/grok-ai/id6670324846",
       "source_owner": "X Corp. / Apple App Store",
       "source_type": "official-store-listing",
-      "observed_on": "2026-08-12",
-      "caveat": "条目同一行未标明计费周期；周期需结合发布报道理解，当前结账仍以用户账号为准。"
+      "observed_on": "2026-08-31",
+      "caveat": "条目同一行未标明计费周期；当前结账仍以用户账号为准。"
     },
     {
       "id": "techcrunch-heavy-launch-monthly-price",
@@ -37,8 +46,35 @@
       "source": "https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/",
       "source_owner": "TechCrunch",
       "source_type": "secondary-launch-report",
-      "observed_on": "2026-08-12",
-      "caveat": "这是同期媒体报道的发布价口径，不是 xAI 当前定价页显示的结账金额。"
+      "observed_on": "2026-08-31",
+      "caveat": "这是同期媒体报道的历史发布价，不是 xAI 当前定价页显示的结账金额。"
+    },
+    {
+      "id": "xai-build-all-plans",
+      "claim": "xAI 2026-08-19 公告称 Grok Build 已向所有方案开放。",
+      "source": "https://x.ai/news/grok-build-for-everyone",
+      "source_owner": "xAI",
+      "source_type": "official",
+      "observed_on": "2026-08-31",
+      "caveat": "不能把 Build 写成 Heavy 独占功能；实际可用性以账号显示为准。"
+    },
+    {
+      "id": "xai-grok-bot-eligibility",
+      "claim": "xAI 文档当前列出符合条件的 SuperGrok Plus 与 SuperGrok Heavy 可使用 Grok Bot。",
+      "source": "https://docs.x.ai/grok-bot/get-started",
+      "source_owner": "xAI",
+      "source_type": "official",
+      "observed_on": "2026-08-31",
+      "caveat": "资格、额度和入口以账号当下显示为准。"
+    },
+    {
+      "id": "xai-grok-bot-x-integration",
+      "claim": "xAI 2026-08-29 公告说明 Grok Bot 可搜索 X 帖子并读取时间线。",
+      "source": "https://x.ai/news/grok-bot-and-x",
+      "source_owner": "xAI",
+      "source_type": "official",
+      "observed_on": "2026-08-31",
+      "caveat": "不据此推导不限量、永久可用或所有地区一致。"
     },
     {
       "id": "xai-account-credential-rule",
@@ -46,47 +82,46 @@
       "source": "https://x.ai/legal/terms-of-service",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-12",
+      "observed_on": "2026-08-31",
       "caveat": "条款可能更新，账号相关决策前应重新阅读最新版本。"
     }
   ],
   "third_party_offer": {
     "provider": "AIXiamo",
-    "commercial_disclosure": "以下是 AIXiamo 第一方商业信息，不是官方定价或独立评测。",
+    "commercial_disclosure": "以下为 AIXiamo 运营方公开的第一方商业事实，不是 xAI 官方定价或独立测评。",
     "plan": "SuperGrok Heavy",
-    "duration_months": 3,
-    "price": {
-      "amount": 580,
-      "currency": "CNY"
-    },
-    "manual_capacity": 20,
-    "capacity_meaning": "本批可处理的人工订单名额，不代表 xAI 官方配额。",
+    "plans": [
+      {"duration_months": 1, "price": {"amount": 380, "currency": "CNY"}},
+      {"duration_months": 3, "price": {"amount": 580, "currency": "CNY"}}
+    ],
+    "recommended_duration_months": 3,
+    "savings_vs_monthly_cny": 560,
+    "manual_capacity": 18,
+    "capacity_meaning": "核验时可处理的人工订单名额，不代表 xAI 官方配额；库存随订单变化。",
     "delivery_options": [
       {
         "id": "own-account-assisted",
-        "label": "本人账号人工开通",
-        "credential_policy": "用户自己登录；不索取密码、验证码、恢复码、Cookie、Session 或 Token。",
-        "risk_note": "账号条件、地区、方案和平台限制仍可能变化。"
+        "label": "本人账号快速人工开通",
+        "credential_policy": "用户自己登录；不索取密码、验证码、恢复码、Cookie、SSO、Session 或 Token。",
+        "risk_note": "处理时间、账号条件、地区、方案和平台限制以实时订单与账号显示为准。"
       },
       {
         "id": "preconfigured-account",
-        "label": "成品账号交付",
+        "label": "已开通 Heavy 的成品账号交付",
         "credential_policy": "按商品页说明交付账号资料；不应被表述为与本人账号同等安全。",
         "risk_note": "存在控制权、恢复权以及账号共享或转让条款风险。"
       }
     ],
     "payment_methods": ["Alipay", "USDT-BEP20", "USDT-TRC20"],
-    "wechat_contact_only": true,
+    "self_service_wechat_payment": false,
+    "assisted_wechat_payment_before_checkout": true,
+    "processing_time_caveat": "提供快速人工处理路径，但不承诺固定分钟数；以实时库存和订单状态为准。",
+    "warranty": "订单完成并验收后无质保；未完成约定交付仍按订单与公开售后规则核验。",
+    "owner_page": "https://www.aixiamo.com/grok",
     "comparison_context": {
-      "reported_monthly_price_usd": 300,
-      "reported_three_month_price_usd": 900,
-      "illustrative_exchange_rate": {
-        "as_of": "2026-08-12",
-        "usd_to_cny": 6.76
-      },
-      "illustrative_three_month_value_cny": 6084,
-      "method": "300 USD × 3 months × 6.76 CNY/USD",
-      "caveat": "基于 TechCrunch 发布报道月价和示例汇率的算术换算；不代表 xAI 当前结账价或实时汇率。"
+      "reported_monthly_launch_price_usd": 300,
+      "reported_three_month_launch_price_usd": 900,
+      "caveat": "仅为 2025-07 发布报道的历史价格算术；不是当前官方结账价，也不证明不同渠道权益完全相同。"
     }
   }
 }
