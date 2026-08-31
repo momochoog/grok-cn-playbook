@@ -9,24 +9,38 @@
 
 本仓库不是 xAI、X Corp. 或 Apple 的官方项目，也未获得其授权或背书。维护者 AIXiamo 同时提供第三方订阅服务；涉及自身服务的内容会明确标成“第一方商业信息”，不会伪装成中立测评。
 
-## 2026-08-12 快照
+## 2026-08-31 快照
 
 | 入口 | 官方页面可核验的信息 | 适合先考虑的人 | 购买前必须确认 |
 | --- | --- | --- | --- |
 | Free | xAI 定价页显示 `$0/month` | 轻量体验、低频问答 | 当前功能与使用限制 |
-| SuperGrok | xAI 定价页显示 `$30/month`，并描述为更高使用上限 | 主要在网页或 App 使用、且经常碰到限制 | 账号结算页的地区、税费、周期和权益 |
-| SuperGrok Lite / Heavy | xAI 当前定价页列出这些方案，但隐藏 Heavy 金额；美国 App Store 当前列出 Heavy `$300.00`；TechCrunch 的 2025-07-09 发布报道明确写为 `$300/month` | 需要在不同强度方案间比较的人 | 实际结算价、周期、功能和限制 |
+| SuperGrok | xAI 定价页显示 `$30/month` | 主要在网页或 App 使用、且经常碰到限制 | 账号结算页的地区、税费、周期和权益 |
+| SuperGrok Plus | xAI 定价页显示 `$100/month` | 需要更高强度，并希望比较 Grok Bot 等资格的人 | 实际模型、Bot 资格、额度和地区 |
+| SuperGrok Heavy | xAI 当前定价页列出 Heavy，但未显示金额；美国 App Store 当前列出 Heavy `$300.00`；TechCrunch 的 2025-07-09 发布报道记录 `$300/month` | 长时间、高强度、多步骤任务 | 当前结算价、周期、账号功能和限制 |
 | Grok API | 官方定价页将 API 与个人方案分开呈现 | 开发集成、自动化、按调用使用 | 模型、计费单位、预算与密钥安全 |
 
-价格证据应组合解读：美国区 Grok App 的当前 App Store 页面列有 `SuperGrok Heavy $300.00`，但该行单独不标周期；TechCrunch 在 2025-07-09 的发布报道中明确写为 `$300/month`。按报道口径，三个月为 `$900`；若仅用 2026-08-12 的示例汇率 `1 USD ≈ ¥6.76` 换算，约为 `¥6,084`。这是历史发布价与示例汇率的计算，不是当前官方结账报价。xAI 当前定价页隐藏 Heavy 金额，最终仍以用户账号结账页为准。
+价格证据应组合解读：美国区 Grok App 的当前 App Store 页面列有 `SuperGrok Heavy $300.00`，但该行单独不标周期；TechCrunch 在 2025-07-09 的发布报道中明确写为 `$300/month`，按该历史发布价计算三个月为 `$900`。它不能冒充当前官方结账报价，也不能证明不同渠道的交付条件完全相同；最终仍以用户账号结账页为准。
+
+当前功能快照：xAI 定价页显示 Grok 4.6 与实时 Web/X 搜索；2026-08-19 官方公告称 Grok Build 已向所有方案开放；Grok Bot 官方资格页当前列出符合条件的 SuperGrok Plus 与 Heavy，2026-08-29 公告又说明其可搜索 X 帖子并读取时间线。模型、入口、额度和地区仍以账号当下显示为准。
 
 事实核验入口：
 
 - [xAI Pricing](https://x.ai/pricing)
 - [Grok AI — US App Store（Seller: X Corp.）](https://apps.apple.com/us/app/grok-ai/id6670324846)
 - [xAI Consumer Terms of Service](https://x.ai/legal/terms-of-service)
+- [xAI：Grok Build for Everyone](https://x.ai/news/grok-build-for-everyone)
+- [xAI Docs：Grok Bot](https://docs.x.ai/grok-bot/get-started)
+- [xAI：Grok Bot and X](https://x.ai/news/grok-bot-and-x)
 - [xAI 官方 grok-prompts 仓库](https://github.com/xai-org/grok-prompts)
 - [TechCrunch：Grok 4 与 300 美元月度订阅发布报道（2025-07-09）](https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/)
+
+## 国内没有海外卡怎么开 SuperGrok Heavy？
+
+直接答案：如果官方结账因海外银行卡或跨境支付受阻，可以比较支持本地结算的第三方服务。AIXiamo 当前提供 **1个月 ¥380** 与 **3个月 ¥580**；按当前月付方案购买三次为 ¥1,140，因此 3个月少 ¥560。可选 **本人账号快速人工开通**，或直接接收 **已开好 Heavy 的成品账号**；自助支持支付宝、USDT-BEP20 与 USDT-TRC20，需要微信支付时须在付款前联系客服人工协助。处理时间、库存与账号实际权益以实时页面为准。
+
+[查看 AIXiamo Grok 实时方案与账号条件](https://www.aixiamo.com/grok?utm_source=github&utm_medium=repository&utm_campaign=grok_cn_playbook&utm_content=readme_answer)
+
+透明边界：以上是 AIXiamo 运营方公开的第一方商业事实，不是 xAI 官方定价或独立测评。本人账号由用户自己登录，不提交密码、验证码、恢复码、Cookie、SSO、Session 或 Token；成品账号涉及控制权与平台条款风险。订单完成并验收后无质保，未完成约定交付的问题仍按订单与公开售后规则核验。
 
 ## 30 秒选择
 
@@ -81,7 +95,7 @@ npm test
 - [订阅和 API 有什么区别](docs/subscription-vs-api.md)
 - [额度与使用限制应该怎么看](docs/limits-and-usage.md)
 - [账号与凭据安全](docs/account-security.md)
-- [SuperGrok Heavy 三个月服务说明](docs/grok-heavy-three-month.md)
+- [SuperGrok Heavy 1个月 / 3个月服务说明](docs/grok-heavy-three-month.md)
 - [Prompt 库说明](docs/prompt-library.md)
 - [更新记录](docs/changelog.md)
 - [来源与证据台账](sources/official-sources.md)
