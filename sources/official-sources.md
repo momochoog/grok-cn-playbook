@@ -1,13 +1,13 @@
 # 来源与证据台账
 
-> 最后核验：2026-08-12。优先记录官方原始页面；当官方当前页隐藏历史发布金额时，使用同期媒体报道补足历史口径，并明确标成二手来源。网页会变化；引用具体事实时仍需写明核验日期。
+> 最后核验：2026-08-31。优先记录官方原始页面；当官方当前页隐藏历史发布金额时，使用同期媒体报道补足历史口径，并明确标成二手来源。网页会变化；引用具体事实时仍需写明核验日期。
 
 ## 1. xAI Pricing
 
 - URL: https://x.ai/pricing
 - 发布主体：xAI
 - 用途：核验当前方案名称、公开价格、方案比较与 Individual / Team / API 的产品边界。
-- 本仓库使用的可核验事实：页面显示 Free `$0/month`、SuperGrok `$30/month`；比较表列出 SuperGrok Lite 和 SuperGrok Heavy；付费层级提供更高限制，但不能据此写成无限量。
+- 本仓库使用的可核验事实：页面显示 Free `$0/month`、SuperGrok `$30/month`、SuperGrok Plus `$100/month`，并列出 Heavy；当前页面还展示 Grok 4.6、实时 Web/X 搜索及多种产品功能。付费层级提供更高限制，但不能据此写成无限量。
 - 注意：当前页面隐藏 Heavy 金额，因此它不能单独证明当前 Heavy 结账价格。
 
 ## 2. Grok AI — US App Store
@@ -34,7 +34,7 @@
 - 来源类型：同期媒体发布报道，不是 xAI 官方定价页。
 - 用途：补充当前官方定价页已经隐藏的 SuperGrok Heavy 发布月价口径。
 - 本仓库使用的可核验事实：报道明确把 SuperGrok Heavy 描述为 `$300-per-month` 订阅。
-- 计算边界：按该报道口径，三个月为 `$900`；使用 2026-08-12 示例汇率 `1 USD ≈ ¥6.76` 约为 `¥6,084`。换算结果不代表 xAI 当前结账价或实时汇率。
+- 计算边界：按该历史发布价计算，三个月为 `$900`。它不代表 xAI 当前结账价，也不能证明不同渠道的交付条件或权益完全相同。
 
 ## 5. xAI 官方 grok-prompts 仓库
 
@@ -43,6 +43,29 @@
 - 用途：确认 xAI 公开部分 Grok 系统 Prompt 以及其许可证。
 - 许可证：AGPL-3.0（核验时）。
 - 本仓库边界：仅链接和描述，不复制、翻译、拼接或近义改写官方 Prompt 文件。本仓库的用户工作流 Prompt 独立创作并使用 Apache-2.0。
+
+## 6. Grok Build for Everyone
+
+- URL: https://x.ai/news/grok-build-for-everyone
+- 发布主体：xAI
+- 发布时间：2026-08-19
+- 用途：核验 Grok Build 当前方案覆盖范围。
+- 本仓库使用的可核验事实：Build 已扩展至所有方案，因此不能把它写成 Heavy 独占权益。
+
+## 7. Grok Bot 使用资格
+
+- URL: https://docs.x.ai/grok-bot/get-started
+- 发布主体：xAI
+- 用途：核验 Grok Bot 当前会员资格与入口。
+- 本仓库使用的可核验事实：官方当前列出符合条件的 SuperGrok Plus 与 SuperGrok Heavy 可使用；实际资格、额度与地区以账号显示为准。
+
+## 8. Grok Bot 与 X 集成
+
+- URL: https://x.ai/news/grok-bot-and-x
+- 发布主体：xAI
+- 发布时间：2026-08-29
+- 用途：核验 Grok Bot 当前 X 搜索与时间线能力。
+- 本仓库使用的可核验事实：可搜索 X 帖子并读取时间线；不据此扩写为不限量、永久可用或所有地区一致。
 
 ## 引用原则
 
