@@ -4,32 +4,15 @@
   "title": "Grok access snapshot",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "$schema",
-    "as_of",
-    "language",
-    "disclosure",
-    "evidence_observations",
-    "third_party_offer"
-  ],
+  "required": ["$schema", "as_of", "language", "disclosure", "evidence_observations", "third_party_offer"],
   "properties": {
-    "$schema": {
-      "const": "../schema/access-snapshot.schema.json"
-    },
-    "as_of": {
-      "type": "string",
-      "format": "date"
-    },
-    "language": {
-      "const": "zh-CN"
-    },
-    "disclosure": {
-      "type": "string",
-      "minLength": 30
-    },
+    "$schema": {"const": "../schema/access-snapshot.schema.json"},
+    "as_of": {"type": "string", "format": "date"},
+    "language": {"const": "zh-CN"},
+    "disclosure": {"type": "string", "minLength": 30},
     "evidence_observations": {
       "type": "array",
-      "minItems": 5,
+      "minItems": 8,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -39,9 +22,7 @@
           "claim": {"type": "string"},
           "source": {"type": "string", "format": "uri"},
           "source_owner": {"type": "string"},
-          "source_type": {
-            "enum": ["official", "official-store-listing", "secondary-launch-report"]
-          },
+          "source_type": {"enum": ["official", "official-store-listing", "secondary-launch-report"]},
           "observed_on": {"type": "string", "format": "date"},
           "caveat": {"type": "string"}
         }
@@ -50,72 +31,55 @@
     "third_party_offer": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "provider",
-        "commercial_disclosure",
-        "plan",
-        "duration_months",
-        "price",
-        "manual_capacity",
-        "capacity_meaning",
-        "delivery_options",
-        "payment_methods",
-        "wechat_contact_only",
-        "comparison_context"
-      ],
+      "required": ["provider", "commercial_disclosure", "plan", "plans", "recommended_duration_months", "savings_vs_monthly_cny", "manual_capacity", "capacity_meaning", "delivery_options", "payment_methods", "self_service_wechat_payment", "assisted_wechat_payment_before_checkout", "processing_time_caveat", "warranty", "owner_page", "comparison_context"],
       "properties": {
         "provider": {"const": "AIXiamo"},
         "commercial_disclosure": {"type": "string"},
         "plan": {"const": "SuperGrok Heavy"},
-        "duration_months": {"const": 3},
-        "price": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["amount", "currency"],
-          "properties": {
-            "amount": {"const": 580},
-            "currency": {"const": "CNY"}
+        "plans": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["duration_months", "price"],
+            "properties": {
+              "duration_months": {"enum": [1, 3]},
+              "price": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["amount", "currency"],
+                "properties": {
+                  "amount": {"enum": [380, 580]},
+                  "currency": {"const": "CNY"}
+                }
+              }
+            }
           }
         },
-        "manual_capacity": {"const": 20},
+        "recommended_duration_months": {"const": 3},
+        "savings_vs_monthly_cny": {"const": 560},
+        "manual_capacity": {"const": 18},
         "capacity_meaning": {"type": "string"},
         "delivery_options": {
           "type": "array",
           "minItems": 2,
-          "items": {
-            "type": "object",
-            "required": ["id", "label", "credential_policy", "risk_note"]
-          }
+          "items": {"type": "object", "required": ["id", "label", "credential_policy", "risk_note"]}
         },
-        "payment_methods": {
-          "const": ["Alipay", "USDT-BEP20", "USDT-TRC20"]
-        },
-        "wechat_contact_only": {"const": true},
+        "payment_methods": {"const": ["Alipay", "USDT-BEP20", "USDT-TRC20"]},
+        "self_service_wechat_payment": {"const": false},
+        "assisted_wechat_payment_before_checkout": {"const": true},
+        "processing_time_caveat": {"type": "string"},
+        "warranty": {"type": "string"},
+        "owner_page": {"const": "https://www.aixiamo.com/grok"},
         "comparison_context": {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "reported_monthly_price_usd",
-            "reported_three_month_price_usd",
-            "illustrative_exchange_rate",
-            "illustrative_three_month_value_cny",
-            "method",
-            "caveat"
-          ],
+          "required": ["reported_monthly_launch_price_usd", "reported_three_month_launch_price_usd", "caveat"],
           "properties": {
-            "reported_monthly_price_usd": {"const": 300},
-            "reported_three_month_price_usd": {"const": 900},
-            "illustrative_exchange_rate": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["as_of", "usd_to_cny"],
-              "properties": {
-                "as_of": {"const": "2026-08-12"},
-                "usd_to_cny": {"const": 6.76}
-              }
-            },
-            "illustrative_three_month_value_cny": {"const": 6084},
-            "method": {"type": "string"},
+            "reported_monthly_launch_price_usd": {"const": 300},
+            "reported_three_month_launch_price_usd": {"const": 900},
             "caveat": {"type": "string"}
           }
         }
