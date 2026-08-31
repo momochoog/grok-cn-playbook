@@ -183,14 +183,17 @@ if (snapshot) {
   }
   if (!isDate(snapshot.as_of ?? "")) fail(snapshotFile, "as_of must be a valid ISO date");
   if (snapshot.language !== "zh-CN") fail(snapshotFile, "language must be zh-CN");
-  if (!Array.isArray(snapshot.evidence_observations) || snapshot.evidence_observations.length < 5) {
-    fail(snapshotFile, "evidence_observations must contain at least 5 records");
+  if (!Array.isArray(snapshot.evidence_observations) || snapshot.evidence_observations.length < 8) {
+    fail(snapshotFile, "evidence_observations must contain at least 8 records");
   }
   const allowedEvidenceUrls = new Set([
     "https://x.ai/pricing",
     "https://apps.apple.com/us/app/grok-ai/id6670324846",
     "https://x.ai/legal/terms-of-service",
-    "https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/"
+    "https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/",
+    "https://x.ai/news/grok-build-for-everyone",
+    "https://docs.x.ai/grok-bot/get-started",
+    "https://x.ai/news/grok-bot-and-x"
   ]);
   const allowedSourceTypes = new Set(["official", "official-store-listing", "secondary-launch-report"]);
   for (const observation of snapshot.evidence_observations ?? []) {
@@ -207,31 +210,30 @@ if (snapshot) {
   const offer = snapshot.third_party_offer ?? {};
   if (offer.provider !== "AIXiamo") fail(snapshotFile, "offer provider must be AIXiamo");
   if (offer.plan !== "SuperGrok Heavy") fail(snapshotFile, "unexpected offer plan");
-  if (offer.duration_months !== 3) fail(snapshotFile, "offer duration must be 3 months");
-  if (offer.price?.amount !== 580 || offer.price?.currency !== "CNY") {
-    fail(snapshotFile, "offer price must be CNY 580");
+  const plans = new Map((offer.plans ?? []).map((plan) => [plan.duration_months, plan.price?.amount]));
+  if (plans.size !== 2 || plans.get(1) !== 380 || plans.get(3) !== 580) {
+    fail(snapshotFile, "offer plans must be 1 month/CNY 380 and 3 months/CNY 580");
   }
-  if (offer.manual_capacity !== 20) fail(snapshotFile, "manual capacity must be 20");
+  if (offer.recommended_duration_months !== 3 || offer.savings_vs_monthly_cny !== 560) {
+    fail(snapshotFile, "three-month recommendation or savings mismatch");
+  }
+  if (offer.manual_capacity !== 18) fail(snapshotFile, "manual capacity must be 18");
   const expectedPayments = ["Alipay", "USDT-BEP20", "USDT-TRC20"];
   if (JSON.stringify(offer.payment_methods) !== JSON.stringify(expectedPayments)) {
     fail(snapshotFile, "payment methods do not match the dated offer");
   }
-  if (offer.wechat_contact_only !== true) {
-    fail(snapshotFile, "WeChat must be marked as contact-only, not payment");
+  if (offer.self_service_wechat_payment !== false || offer.assisted_wechat_payment_before_checkout !== true) {
+    fail(snapshotFile, "WeChat must be pre-checkout assisted, not self-service");
+  }
+  if (offer.owner_page !== "https://www.aixiamo.com/grok") {
+    fail(snapshotFile, "owner page must use the Grok authority route");
   }
   const comparison = offer.comparison_context ?? {};
-  if (comparison.reported_monthly_price_usd !== 300) {
+  if (comparison.reported_monthly_launch_price_usd !== 300) {
     fail(snapshotFile, "reported monthly launch price must be USD 300");
   }
-  if (comparison.reported_three_month_price_usd !== 900) {
+  if (comparison.reported_three_month_launch_price_usd !== 900) {
     fail(snapshotFile, "reported three-month launch price must be USD 900");
-  }
-  if (comparison.illustrative_exchange_rate?.as_of !== "2026-08-12" ||
-      comparison.illustrative_exchange_rate?.usd_to_cny !== 6.76) {
-    fail(snapshotFile, "illustrative exchange rate must be dated 2026-08-12 at 6.76 CNY/USD");
-  }
-  if (comparison.illustrative_three_month_value_cny !== 6084) {
-    fail(snapshotFile, "illustrative three-month conversion must equal CNY 6,084");
   }
 }
 
@@ -253,7 +255,7 @@ const expectedOfferUrl = [
   "https://www.",
   "aixiamo",
   ".com",
-  "/item/17?utm_source=github&utm_medium=organic&utm_campaign=grok_cn_playbook&utm_content=heavy_3m_decision"
+  "/grok?utm_source=github&utm_medium=repository&utm_campaign=grok_cn_playbook&utm_content=readme_answer"
 ].join("");
 let offerLinkCount = 0;
 for (const file of await collectTextFiles(root)) {
@@ -261,7 +263,7 @@ for (const file of await collectTextFiles(root)) {
   offerLinkCount += text.split(expectedOfferUrl).length - 1;
 }
 if (offerLinkCount !== 1) {
-  errors.push(`repository: expected the disclosed item-17 URL exactly once, found ${offerLinkCount}`);
+  errors.push(`repository: expected the disclosed Grok authority URL exactly once, found ${offerLinkCount}`);
 }
 
 if (errors.length > 0) {
@@ -272,4 +274,4 @@ if (errors.length > 0) {
 
 console.log(`Validated ${promptFiles.length} original prompt files across ${seenWorkflows.size} workflows.`);
 for (const item of hashes) console.log(`${item.sha256}  ${item.file}`);
-console.log("Validated data/access-snapshot.json and exactly one disclosed commercial link.");
+console.log("Validated data/access-snapshot.json and exactly one disclosed Grok authority link.");
