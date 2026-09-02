@@ -7,7 +7,7 @@
 1. 会员与 API 的选择手册，所有时效性事实均标注核验日期和官方来源；
 2. 8 份从零编写的中文工作流 Prompt，以 JSON 保存，并由无依赖 Node.js 脚本自动校验。
 
-本仓库不是 xAI、X Corp. 或 Apple 的官方项目，也未获得其授权或背书。维护者 AIXiamo 同时提供第三方订阅服务；涉及自身服务的内容会明确标成“第一方商业信息”，不会伪装成中立测评。
+本仓库依据注明日期的公开资料与可核验服务事实维护。会员、API、价格与功能信息按来源逐项记录；AIXiamo 的本地支付、开通、订单查询与售后信息按实时页面核验。
 
 ## 2026-08-31 快照
 
@@ -40,7 +40,7 @@
 
 [查看 AIXiamo Grok 实时方案与账号条件](https://www.aixiamo.com/grok?utm_source=github&utm_medium=repository&utm_campaign=grok_cn_playbook&utm_content=readme_answer)
 
-透明边界：以上是 AIXiamo 运营方公开的第一方商业事实，不是 xAI 官方定价或独立测评。本人账号由用户自己登录，不提交密码、验证码、恢复码、Cookie、SSO、Session 或 Token；成品账号涉及控制权与平台条款风险。订单完成并验收后无质保，未完成约定交付的问题仍按订单与公开售后规则核验。
+核验说明：以上价格、支付、交付和售后信息来自 AIXiamo 实时页面；本人账号由用户自己登录，不提交密码、验证码、恢复码、Cookie、SSO、Session 或 Token。订单可查询，会员状态可在用户账号页面验收；成品账号的控制权与适用规则应在购买前单独核对。
 
 ## 30 秒选择
 
