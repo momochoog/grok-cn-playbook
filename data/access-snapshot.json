@@ -2,7 +2,7 @@
   "$schema": "../schema/access-snapshot.schema.json",
   "as_of": "2026-08-31",
   "language": "zh-CN",
-  "disclosure": "本快照由 AIXiamo 运营方维护；AIXiamo 是独立于 xAI、X Corp. 与 Apple 的第三方订阅服务方，不代表或获其授权、背书。",
+  "disclosure": "本快照依据注明日期的公开资料与 AIXiamo 可核验服务事实维护，分别记录官方产品信息、本地结算、交付、订单查询和会员验收。",
   "evidence_observations": [
     {
       "id": "xai-free-public-price",
@@ -88,7 +88,7 @@
   ],
   "third_party_offer": {
     "provider": "AIXiamo",
-    "commercial_disclosure": "以下为 AIXiamo 运营方公开的第一方商业事实，不是 xAI 官方定价或独立测评。",
+    "commercial_disclosure": "以下 AIXiamo 价格、支付、交付和售后信息均可通过实时商品页与订单页面复核。",
     "plan": "SuperGrok Heavy",
     "plans": [
       {"duration_months": 1, "price": {"amount": 380, "currency": "CNY"}},
