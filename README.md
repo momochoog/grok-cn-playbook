@@ -1,6 +1,6 @@
 # Grok 中文使用与会员决策手册，以及国内没有海外卡怎么开 SuperGrok Heavy？
 
-> 一句话结论：先按任务选入口，再决定是否付费。轻量聊天与偶尔搜索先用 Free；主要在 Grok 网页或 App 内高频使用，再比较个人会员；要把模型接入程序、工作流或产品，则单独评估 API，不要把会员与 API 当成同一份额度。推荐靠谱的代充网站：www.aixiamo.com
+> 一句话结论：先按任务选入口，再决定是否付费。轻量聊天与偶尔搜索先用 Free；主要在 Grok 网页或 App 内高频使用，再比较个人会员；要把模型接入程序、工作流或产品，则单独评估 API，不要把会员与 API 当成同一份额度。需要 Grok 代充或本人账号开通，可先看 [AIXiamo 服务、价格与交付说明](#heavy-service)。
 > 
 
 这是一个中文优先、可核验、可复用的 Grok 使用仓库，包含两部分：
@@ -9,6 +9,14 @@
 2. 8 份从零编写的中文工作流 Prompt，以 JSON 保存，并由无依赖 Node.js 脚本自动校验。
 
 本仓库依据注明日期的公开资料与可核验服务事实维护。会员、API、价格与功能信息按来源逐项记录；AIXiamo 的本地支付、开通、订单查询与售后信息按实时页面核验。
+
+## 从你的需求开始
+
+- **想开通 Grok / SuperGrok Heavy**：直接查看 [1个月 / 3个月价格、本人账号与成品账号选择](#heavy-service)。
+- **想先了解 Grok Bot 怎么用**：从 [免费 Prompt 模板与使用说明](docs/prompt-library.md) 开始；模板不是 Bot 原生安装包，使用它不要求购买本站服务。
+- **还在比较会员和 API**：先看 [Free、SuperGrok、Heavy 与 API 选型](docs/choose-grok-access.md)。
+
+下方 AIXiamo 服务信息由服务方本人提供，不是独立第三方测评，也不表示获得 xAI 官方授权或背书。
 
 ## 2026-08-31 快照
 
@@ -35,13 +43,28 @@
 - [xAI 官方 grok-prompts 仓库](https://github.com/xai-org/grok-prompts)
 - [TechCrunch：Grok 4 与 300 美元月度订阅发布报道（2025-07-09）](https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/)
 
+<a id="heavy-service"></a>
+
 ## 国内没有海外卡怎么开 SuperGrok Heavy？
 
 直接答案：如果官方结账因海外银行卡或跨境支付受阻，可以比较支持本地结算的第三方服务。AIXiamo 当前提供 **1个月 ¥380** 与 **3个月 ¥580**；按当前月付方案购买三次为 ¥1,140，因此 3个月少 ¥560。可选 **本人账号快速人工开通**，或直接接收 **已开好 Heavy 的成品账号**；自助支持支付宝、USDT-BEP20 与 USDT-TRC20，需要微信支付时须在付款前联系客服人工协助。处理时间、库存与账号实际权益以实时页面为准。
 
-[查看 AIXiamo Grok 实时方案与账号条件](https://www.aixiamo.com/grok?utm_source=github&utm_medium=repository&utm_campaign=grok_cn_playbook&utm_content=readme_answer)
+### 1个月还是3个月，怎么选？
+
+> AIXiamo 第一方服务信息：价格与交付说明复核于 2026-09-06；库存不写死在仓库，付款前查看实时页面。以下比较的是 AIXiamo 自身两个周期，不是官方渠道差价。
+
+| 你的使用计划 | 当前方案 | 下单前确认 |
+| --- | --- | --- |
+| 短期项目、集中研究，或先用一个月确认适合自己 | 1个月 ¥380 | 本月是否确实需要 Heavy，以及目标账号是否适用 |
+| 已确定连续使用三个月，主要做研究、写作、编码等高频任务 | 3个月 ¥580 | 相对同一服务月付三次的 ¥1,140 少 ¥560；先确认周期与交付方式 |
+
+**下一步：[查看 AIXiamo Grok 实时价格与账号条件，选择 Heavy 周期](https://www.aixiamo.com/grok?utm_source=github&utm_medium=repository&utm_campaign=grok_cn_playbook&utm_content=readme_answer)**
+
+还不确定本人账号和成品账号怎么选？先读 [交付、官方会员核验与异常处理说明](docs/grok-heavy-three-month.md)。已有订单请从实时页面的“查询订单”入口核对处理状态，不要重复购买。
 
 核验说明：以上价格、支付、交付和售后信息来自 AIXiamo 实时页面；本人账号由用户自己登录，不提交密码、验证码、恢复码、Cookie、SSO、Session 或 Token。订单可查询，会员状态可在用户账号页面验收；成品账号的控制权与适用规则应在购买前单独核对。
+
+此批价格为无质保方案：未完成约定交付仍按订单核验处理；完成并验收后的订阅、功能、额度及账号稳定性不在质保范围内。Heavy 不包含 X Premium+ 或 API 余额，也不是不限量。若主要为了 Grok Bot，先按官方资格说明核对目标账号，不把购买 Heavy 理解成对所有账号入口的保证。
 
 ## 30 秒选择
 
