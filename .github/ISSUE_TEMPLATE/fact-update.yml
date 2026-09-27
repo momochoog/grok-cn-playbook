@@ -36,6 +36,5 @@ body:
     attributes:
       label: 隐私检查
       options:
-        - label: 我没有提交账号、订单、联系方式、Cookie、Session、Token 或 API Key。
+        - label: 我没有提交账号登录信息、订单、联系方式或 API Key。
           required: true
-

@@ -1,6 +1,6 @@
 # 来源与证据台账
 
-> 最后核验：2026-08-31。优先记录官方原始页面；当官方当前页隐藏历史发布金额时，使用同期媒体报道补足历史口径，并明确标成二手来源。网页会变化；引用具体事实时仍需写明核验日期。
+> 2026-09-27 复核了 xAI 定价页、美国区 App Store、Grok Build 与 Grok Bot 公告；其他条目沿用原核验记录。优先记录官方原始页面；历史发布金额明确标成历史口径。网页会变化，引用具体事实时仍需写明核验日期。
 
 ## 1. xAI Pricing
 
@@ -52,12 +52,13 @@
 - 用途：核验 Grok Build 当前方案覆盖范围。
 - 本仓库使用的可核验事实：Build 已扩展至所有方案，因此不能把它写成 Heavy 独占权益。
 
-## 7. Grok Bot 使用资格
+## 7. Grok Bot 方案覆盖
 
-- URL: https://docs.x.ai/grok-bot/get-started
+- URL: https://x.ai/news/grok-bot-more-plans
 - 发布主体：xAI
-- 用途：核验 Grok Bot 当前会员资格与入口。
-- 本仓库使用的可核验事实：官方当前列出符合条件的 SuperGrok Plus 与 SuperGrok Heavy 可使用；实际资格、额度与地区以账号显示为准。
+- 发布时间：2026-08-26
+- 用途：核验 Grok Bot 已扩展至哪些会员方案。
+- 本仓库使用的可核验事实：公告列出 SuperGrok、SuperGrok Plus 与 SuperGrok Heavy；具体入口和账号关联要求仍以[官方入门页](https://docs.x.ai/grok-bot/get-started)与账号显示为准。
 
 ## 8. Grok Bot 与 X 集成
 

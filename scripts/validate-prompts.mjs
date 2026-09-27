@@ -192,6 +192,7 @@ if (snapshot) {
     "https://x.ai/legal/terms-of-service",
     "https://techcrunch.com/2025/07/09/elon-musks-xai-launches-grok-4-alongside-a-300-monthly-subscription/",
     "https://x.ai/news/grok-build-for-everyone",
+    "https://x.ai/news/grok-bot-more-plans",
     "https://docs.x.ai/grok-bot/get-started",
     "https://x.ai/news/grok-bot-and-x"
   ]);
@@ -214,10 +215,16 @@ if (snapshot) {
   if (plans.size !== 2 || plans.get(1) !== 380 || plans.get(3) !== 580) {
     fail(snapshotFile, "offer plans must be 1 month/CNY 380 and 3 months/CNY 580");
   }
-  if (offer.recommended_duration_months !== 3 || offer.savings_vs_monthly_cny !== 560) {
-    fail(snapshotFile, "three-month recommendation or savings mismatch");
+  const options = new Map((offer.delivery_options ?? []).map((option) => [option.id, option]));
+  if (JSON.stringify(options.get("own-account-assisted")?.available_duration_months) !== JSON.stringify([1])) {
+    fail(snapshotFile, "own-account delivery must only be available for one month");
   }
-  if (offer.manual_capacity !== 18) fail(snapshotFile, "manual capacity must be 18");
+  if (JSON.stringify(options.get("preconfigured-account")?.available_duration_months) !== JSON.stringify([1, 3]) ||
+      !options.get("preconfigured-account")?.details_by_duration?.["1"]?.includes("换绑邮箱") ||
+      !options.get("preconfigured-account")?.details_by_duration?.["3"]?.includes("邮箱密保") ||
+      !options.get("preconfigured-account")?.details_by_duration?.["3"]?.includes("换绑邮箱")) {
+    fail(snapshotFile, "three-month delivery must be a rebindable account with email recovery");
+  }
   const expectedPayments = ["Alipay", "USDT-BEP20", "USDT-TRC20"];
   if (JSON.stringify(offer.payment_methods) !== JSON.stringify(expectedPayments)) {
     fail(snapshotFile, "payment methods do not match the dated offer");

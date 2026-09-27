@@ -2,6 +2,12 @@
 
 所有重要事实更新都应记录日期、变更内容和复核来源。
 
+## 2026-09-27 — 交付方式与官方方案核对
+
+- 按 [AIXiamo 实时商品页](https://www.aixiamo.com/grok)区分 1个月成品号／本人账号充值，以及 3个月带邮箱密保、支持换绑邮箱的成品号；同步 README、选型指南和机器快照。
+- 按 [xAI 公告](https://x.ai/news/grok-bot-more-plans)更正 Grok Bot 已覆盖 SuperGrok、SuperGrok Plus 和 Heavy；保留实际账号资格核验。
+- 移除过时的人工名额快照和跨交付方式的默认推荐比较；可售状态以实时商品页为准。
+
 ## 2026-08-31 — v1.1.0
 
 - 同步 Free、SuperGrok、SuperGrok Plus 与 Heavy 的当前公开层级；

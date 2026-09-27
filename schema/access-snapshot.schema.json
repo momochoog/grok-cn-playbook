@@ -31,7 +31,7 @@
     "third_party_offer": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["provider", "commercial_disclosure", "plan", "plans", "recommended_duration_months", "savings_vs_monthly_cny", "manual_capacity", "capacity_meaning", "delivery_options", "payment_methods", "self_service_wechat_payment", "assisted_wechat_payment_before_checkout", "processing_time_caveat", "warranty", "owner_page", "comparison_context"],
+      "required": ["provider", "commercial_disclosure", "plan", "plans", "delivery_options", "payment_methods", "self_service_wechat_payment", "assisted_wechat_payment_before_checkout", "processing_time_caveat", "warranty", "owner_page", "comparison_context"],
       "properties": {
         "provider": {"const": "AIXiamo"},
         "commercial_disclosure": {"type": "string"},
@@ -58,14 +58,22 @@
             }
           }
         },
-        "recommended_duration_months": {"const": 3},
-        "savings_vs_monthly_cny": {"const": 560},
-        "manual_capacity": {"const": 18},
-        "capacity_meaning": {"type": "string"},
         "delivery_options": {
           "type": "array",
           "minItems": 2,
-          "items": {"type": "object", "required": ["id", "label", "credential_policy", "risk_note"]}
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label", "available_duration_months", "credential_policy", "risk_note"],
+            "properties": {
+              "id": {"enum": ["own-account-assisted", "preconfigured-account"]},
+              "label": {"type": "string"},
+              "available_duration_months": {"type": "array", "items": {"enum": [1, 3]}, "uniqueItems": true},
+              "details_by_duration": {"type": "object", "properties": {"1": {"type": "string"}, "3": {"type": "string"}}, "additionalProperties": false},
+              "credential_policy": {"type": "string"},
+              "risk_note": {"type": "string"}
+            }
+          }
         },
         "payment_methods": {"const": ["Alipay", "USDT-BEP20", "USDT-TRC20"]},
         "self_service_wechat_payment": {"const": false},
