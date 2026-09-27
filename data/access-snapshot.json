@@ -1,6 +1,6 @@
 {
   "$schema": "../schema/access-snapshot.schema.json",
-  "as_of": "2026-08-31",
+  "as_of": "2026-09-27",
   "language": "zh-CN",
   "disclosure": "本快照依据注明日期的公开资料与 AIXiamo 可核验服务事实维护，分别记录官方产品信息、本地结算、交付、订单查询和会员验收。",
   "evidence_observations": [
@@ -10,7 +10,7 @@
       "source": "https://x.ai/pricing",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-31",
+      "observed_on": "2026-09-27",
       "caveat": "功能和限制可能变化，以当前页面与账号内显示为准。"
     },
     {
@@ -19,7 +19,7 @@
       "source": "https://x.ai/pricing",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-31",
+      "observed_on": "2026-09-27",
       "caveat": "更高上限不等于无限；地区、税费和结算条件以账号结算页为准。"
     },
     {
@@ -28,7 +28,7 @@
       "source": "https://x.ai/pricing",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-31",
+      "observed_on": "2026-09-27",
       "caveat": "公开价格不代表所有地区、税费与账号的最终结算金额。"
     },
     {
@@ -37,7 +37,7 @@
       "source": "https://apps.apple.com/us/app/grok-ai/id6670324846",
       "source_owner": "X Corp. / Apple App Store",
       "source_type": "official-store-listing",
-      "observed_on": "2026-08-31",
+      "observed_on": "2026-09-27",
       "caveat": "条目同一行未标明计费周期；当前结账仍以用户账号为准。"
     },
     {
@@ -55,17 +55,17 @@
       "source": "https://x.ai/news/grok-build-for-everyone",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-31",
+      "observed_on": "2026-09-27",
       "caveat": "不能把 Build 写成 Heavy 独占功能；实际可用性以账号显示为准。"
     },
     {
-      "id": "xai-grok-bot-eligibility",
-      "claim": "xAI 文档当前列出符合条件的 SuperGrok Plus 与 SuperGrok Heavy 可使用 Grok Bot。",
-      "source": "https://docs.x.ai/grok-bot/get-started",
+      "id": "xai-grok-bot-expanded-plans",
+      "claim": "xAI 2026-08-26 公告称 Grok Bot 已覆盖 SuperGrok、SuperGrok Plus 与 SuperGrok Heavy。",
+      "source": "https://x.ai/news/grok-bot-more-plans",
       "source_owner": "xAI",
       "source_type": "official",
-      "observed_on": "2026-08-31",
-      "caveat": "资格、额度和入口以账号当下显示为准。"
+      "observed_on": "2026-09-27",
+      "caveat": "实际入口和账号关联要求以官方入门页及账号显示为准。"
     },
     {
       "id": "xai-grok-bot-x-integration",
@@ -88,28 +88,27 @@
   ],
   "third_party_offer": {
     "provider": "AIXiamo",
-    "commercial_disclosure": "以下 AIXiamo 价格、支付、交付和售后信息均可通过实时商品页与订单页面复核。",
+    "commercial_disclosure": "以下 AIXiamo 价格与交付方式于 2026-09-27 核验；可售状态和售后信息以实时商品页与原订单为准。",
     "plan": "SuperGrok Heavy",
     "plans": [
       {"duration_months": 1, "price": {"amount": 380, "currency": "CNY"}},
       {"duration_months": 3, "price": {"amount": 580, "currency": "CNY"}}
     ],
-    "recommended_duration_months": 3,
-    "savings_vs_monthly_cny": 560,
-    "manual_capacity": 18,
-    "capacity_meaning": "核验时可处理的人工订单名额，不代表 xAI 官方配额；库存随订单变化。",
     "delivery_options": [
       {
         "id": "own-account-assisted",
-        "label": "本人账号快速人工开通",
-        "credential_policy": "用户自己登录；不索取密码、验证码、恢复码、Cookie、SSO、Session 或 Token。",
-        "risk_note": "处理时间、账号条件、地区、方案和平台限制以实时订单与账号显示为准。"
+        "label": "充值到本人账号",
+        "available_duration_months": [1],
+        "credential_policy": "按商品条件办理本人账号；完成后自行核验会员状态。",
+        "risk_note": "处理时间与适用条件以实时商品页和原订单为准。"
       },
       {
         "id": "preconfigured-account",
-        "label": "已开通 Heavy 的成品账号交付",
-        "credential_policy": "按商品页说明交付账号资料；不应被表述为与本人账号同等安全。",
-        "risk_note": "存在控制权、恢复权以及账号共享或转让条款风险。"
+        "label": "成品号交付",
+        "available_duration_months": [1, 3],
+        "details_by_duration": {"1": "成品号，支持换绑邮箱", "3": "带邮箱密保的成品号，支持换绑邮箱"},
+        "credential_policy": "按原订单领取账号资料并自行核验会员状态。",
+        "risk_note": "账号使用以对应商品说明和平台规则为准。"
       }
     ],
     "payment_methods": ["Alipay", "USDT-BEP20", "USDT-TRC20"],
