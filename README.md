@@ -14,7 +14,8 @@
 
 - **想开通 Grok / SuperGrok Heavy**：直接查看 [1个月 / 3个月价格、本人账号与成品账号选择](#heavy-service)。
 - **想先了解 Grok Bot 怎么用**：从 [免费 Prompt 模板与使用说明](docs/prompt-library.md) 开始；模板不是 Bot 原生安装包，使用它不要求购买本站服务。
-- **还在比较会员和 API**：先看 [Free、SuperGrok、Heavy 与 API 选型](docs/choose-grok-access.md)。
+- **想知道 Grok 高级会员有什么功能、值不值得买**：先看 [SuperGrok、SuperGrok Plus、Heavy 的权益与任务比较](docs/choose-grok-access.md#会员比免费版多了什么)。
+- **还在比较会员和 API**：先看 [Free、SuperGrok、SuperGrok Plus、Heavy 与 API 选型](docs/choose-grok-access.md)。
 
 下方 AIXiamo 服务信息由服务方本人提供，不是独立第三方测评，也不表示获得 xAI 官方授权或背书。
 
@@ -25,16 +26,31 @@
 | Free | xAI 定价页显示 `$0/month` | 轻量体验、低频问答 | 当前功能与使用限制 |
 | SuperGrok | xAI 定价页显示 `$30/month` | 主要在网页或 App 使用、且经常碰到限制 | 账号结算页的地区、税费、周期和权益 |
 | SuperGrok Plus | xAI 定价页显示 `$100/month` | 需要更高强度和更高用量的人 | 实际模型、额度和地区 |
-| SuperGrok Heavy | xAI 当前定价页列出 Heavy，但未显示金额；美国 App Store 当前列出 Heavy `$300.00`；TechCrunch 的 2025-07-09 发布报道记录 `$300/month` | 长时间、高强度、多步骤任务 | 当前结算价、周期、账号功能和限制 |
+| SuperGrok Heavy | 2026-09-27 快照中，xAI 定价页列出 Heavy，但未显示金额；美国 App Store 列出 Heavy `$300.00`；TechCrunch 的 2025-07-09 发布报道记录 `$300/month` | 长时间、高强度、多步骤任务 | 当前结算价、周期、账号功能和限制 |
 | Grok API | 官方定价页将 API 与个人方案分开呈现 | 开发集成、自动化、按调用使用 | 模型、计费单位、预算与密钥安全 |
 
-价格证据应组合解读：美国区 Grok App 的当前 App Store 页面列有 `SuperGrok Heavy $300.00`，但该行单独不标周期；TechCrunch 在 2025-07-09 的发布报道中明确写为 `$300/month`，按该历史发布价计算三个月为 `$900`。它不能冒充当前官方结账报价，也不能证明不同渠道的交付条件完全相同；最终仍以用户账号结账页为准。
+价格证据应组合解读：2026-09-27 保存的美国区 Grok App Store 快照列有 `SuperGrok Heavy $300.00`，但该行单独不标周期；TechCrunch 在 2025-07-09 的发布报道中明确写为 `$300/month`，按该历史发布价计算三个月为 `$900`。它不能冒充当前官方结账报价，也不能证明不同渠道的交付条件完全相同；最终仍以用户账号结账页为准。
 
-当前功能快照：xAI 定价页显示 Grok 4.6 与实时 Web/X 搜索；Grok Build 已向所有方案开放，Grok Bot 已覆盖 SuperGrok、SuperGrok Plus 与 Heavy。不同方案的用量仍有差别，模型、入口和地区以账号当下显示为准。
+### Grok 高级会员有什么功能？（2026-10-06 官方权益复核）
+
+不是所有功能都要买会员：当前 Free 已有实时 Web/X 搜索、语音和 Connectors，Build 也已向所有方案开放。付费的主要价值是更高使用量和进阶工作能力，而不只是多几个功能名称。
+
+- **SuperGrok，官方页面 $30/月**：较高使用限制、Expert、多代理推理，以及图像/视频生成和 Grok Bot 入口；适合频繁搜索、写作、分析和创作。
+- **SuperGrok Plus，官方页面 $100/月**：在 SuperGrok 之上增加 1080p 视频、更高 Chat/Imagine/Voice/Build 使用量、高峰优先和新功能早期访问；适合已遇到普通档限制的人。
+- **SuperGrok Heavy**：按更重任务和实际额度需求比较；官方 Bot 页面强调最高使用量、速度和支持，不能据此承诺无限、固定代理数量或所有账号功能一致。
+
+会员支持的工作不止聊天：可分析 PDF/表格与代码，用 Imagine 创作图片/视频，用 Build 制作应用，或给 Grok Bot 分配跨工具任务。文件分析等属于产品能力，不应全部写成付费独占。付费 Grok 有周使用额度；Bot 另有用量，购买后仍需核对账号入口、关联和限制。
+
+详细的 [功能、场景、X Premium+、周额度与 API 问答](docs/choose-grok-access.md#会员比免费版多了什么) 说明了这些区别。当前价目页聊天模型写 Grok 4.6；4.7 公告明确的是 Build、Cursor 和 API 等入口，不能推导每个会员聊天入口都已支持同一模型。此处只复核官方权益和公开价，不改变上表及下方 AIXiamo 的 2026-09-27 服务快照。
 
 事实核验入口：
 
 - [xAI Pricing](https://x.ai/pricing)
+- [Grok 官方产品页](https://x.ai/grok)
+- [Grok 产品概览](https://docs.x.ai/grok/overview)
+- [Grok 官方 FAQ：使用限制、文件与账号](https://docs.x.ai/grok/faq)
+- [Grok Bot 官网](https://x.ai/bot)
+- [Grok 4.7 官方发布说明](https://x.ai/news/grok-4-7)
 - [Grok AI — US App Store（Seller: X Corp.）](https://apps.apple.com/us/app/grok-ai/id6670324846)
 - [xAI Consumer Terms of Service](https://x.ai/legal/terms-of-service)
 - [xAI：Grok Build for Everyone](https://x.ai/news/grok-build-for-everyone)
@@ -74,7 +90,8 @@
 
 主要在 Grok 网页/App 内使用？
 ├─ 普通高频 → 对照当前 SuperGrok 权益
-└─ 重度任务 → 对照当前 Heavy 权益、限制和实际结算页
+├─ 普通档用量不足或需要1080p视频 → 比较 SuperGrok Plus
+└─ 更重任务 → 对照 Heavy 权益、限制和实际结算页
 
 要写程序、批处理或接入业务系统？
 └─ 评估 API；会员通常不是 API 余额
